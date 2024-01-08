@@ -1,0 +1,9 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DictionaryApp"
+             x:Class="DictionaryApp.MainPage">
+    <StackLayout VerticalOptions="CenterAndExpand">
+        <Button Text="Создать" Clicked="CreateDictionary_Clicked" />
+        <Button Text="Открыть" Clicked="OpenDictionary_Clicked" />
+    </StackLayout>
+</ContentPage>

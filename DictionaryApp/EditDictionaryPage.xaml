@@ -1,0 +1,34 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DictionaryApp"
+             x:Class="DictionaryApp.EditDictionaryPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView ItemsSource="{Binding Words}" SelectedItem="{Binding SelectedWord}" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label>
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="{Binding Key}" FontAttributes="Bold"/>
+                                            <Span Text="  -  " />
+                                            <Span Text="{Binding Value}" />
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Text="Добавить слово" Clicked="AddWord_Clicked" />
+            <Button Text="Изменить слово" Clicked="EditWord_Clicked" />
+            <Button Text="Удалить слово" Clicked="DeleteWord_Clicked" />
+            <Button Text="Сортировать по алфавиту" Clicked="SortAlphabetically_Clicked" />
+            <Button Text="Сортировать по дате" Clicked="SortByDate_Clicked" />
+            <Button Text="Удалить словарь" Clicked="DeleteDictionary_clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
