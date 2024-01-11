@@ -4,6 +4,7 @@
              x:Class="DictionaryApp.EditDictionaryPage">
     <ContentPage.Content>
         <StackLayout>
+            <SearchBar Placeholder="поиск..." TextChanged="OnSearchText_changed" x:Name="searchBar" TextColor="DarkCyan"/>
             <ListView ItemsSource="{Binding Words}" SelectedItem="{Binding SelectedWord}" HasUnevenRows="True">
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -24,10 +25,14 @@
                 </ListView.ItemTemplate>
             </ListView>
             <Button Text="Добавить слово" Clicked="AddWord_Clicked" />
-            <Button Text="Изменить слово" Clicked="EditWord_Clicked" />
-            <Button Text="Удалить слово" Clicked="DeleteWord_Clicked" />
-            <Button Text="Сортировать по алфавиту" Clicked="SortAlphabetically_Clicked" />
-            <Button Text="Сортировать по дате" Clicked="SortByDate_Clicked" />
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Button Text="Изменить слово" Clicked="EditWord_Clicked" FontSize="16"/>
+                <Button Text="Удалить слово" Clicked="DeleteWord_Clicked" FontSize="16"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Button Text="Сортировать по алфавиту" Clicked="SortAlphabetically_Clicked" FontSize="13" />
+                <Button Text="Сортировать по дате" Clicked="SortByDate_Clicked" FontSize="13"/>
+            </StackLayout>
             <Button Text="Удалить словарь" Clicked="DeleteDictionary_clicked"/>
         </StackLayout>
     </ContentPage.Content>

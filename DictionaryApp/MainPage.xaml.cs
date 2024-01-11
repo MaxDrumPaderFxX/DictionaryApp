@@ -32,7 +32,7 @@ namespace DictionaryApp
         {
             LoadDictionariesFromJson();
             string selectedDictionary = await DisplayActionSheet("Открыть словарь", "Отмена", null, dictionaries.ToArray());
-            if (!string.IsNullOrWhiteSpace(selectedDictionary))
+            if (!string.IsNullOrWhiteSpace(selectedDictionary) && selectedDictionary != "Отмена")
             {
                 var editPage = new EditDictionaryPage(selectedDictionary);
                 editPage.DictionaryDeleted += EditPage_DictionaryDeleted;

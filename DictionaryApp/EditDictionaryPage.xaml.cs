@@ -175,5 +175,20 @@ namespace DictionaryApp
         {
             Words = new ObservableCollection<WordEntry>(Words.OrderBy(w => w.AddedDate));
         }
+
+        void OnSearchText_changed(object sender, EventArgs e)
+        {
+            string searchText = searchBar.Text;
+            if (!string.IsNullOrEmpty(searchText))
+            {
+                LoadDictionaryFromJson();
+                var filteredWords = Words.Where(w => w.Key.StartsWith(searchText, StringComparison.OrdinalIgnoreCase));
+                Words = new ObservableCollection<WordEntry>(filteredWords);
+            }
+            else
+            {
+                LoadDictionaryFromJson();
+            }
+        }
     }
 }
